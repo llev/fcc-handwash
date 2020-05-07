@@ -9,7 +9,7 @@ h1,h3 {
 }
 </style>
 
-<h1 class="title">HELLO BITCH</h1>
+<h1 class="title">Handwash App</h1>
 
 <Timer />
 <HowTo />
