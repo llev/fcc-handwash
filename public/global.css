@@ -4,6 +4,28 @@ body {
     font-family: 'Open Sans', sans-serif;
 }
 
+img {
+  width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: #0000ff;
+}
+
+h1 {
+  padding-top: 20px;
+}
+
+h1,h3{
+  text-align: center;
+  margin: 0;
+}
+
+h6 {
+  text-align: center;
+}
+
 button {
     border: none;
     color: #fff;

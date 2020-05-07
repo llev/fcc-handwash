@@ -1,10 +1,12 @@
 <script>
     import Progress from './Progress.svelte';
+    import { createEventDispatcher } from 'svelte';
     
     const totalSeconds = 20;
     let secondsLeft = totalSeconds;
     let isRunning = false;
     $: progress = ((totalSeconds - secondsLeft) / totalSeconds) * 100;
+    const dispatcher = createEventDispatcher();
 
     function startTimer() {
         isRunning = true;
@@ -14,6 +16,7 @@
             clearInterval(timer);
             isRunning = false;
             secondsLeft = totalSeconds;
+            dispatcher("end")
         }
     }, 1000)
     }
@@ -21,9 +24,7 @@
 </script>
 
 <style>
-h2 {
-    margin: 0;
-}
+
 .start {
     background-color: #0000ff;
     color: #fff;
@@ -37,8 +38,8 @@ h2 {
 </style>
 
 
-<div bp="grid">
-    <h2 bp="offset-5@md 4@md 12@sm">Seconds Left: {secondsLeft} </h2>
+<div bp="grid gap-none" >
+    <h3 bp="offset-5@md 4@md 12@sm">Seconds Left: {secondsLeft} </h3>
 </div>
 <Progress {progress}/>
 
